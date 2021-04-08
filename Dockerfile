@@ -1,5 +1,5 @@
 # Using pre-built alpine with server jre
-FROM openjdk:8-jre-alpine
+FROM flippyboy/alpine-java:8u201b09-jre
 
 # XMage settings
 
@@ -27,7 +27,7 @@ WORKDIR /xmage
 RUN curl --silent --show-error http://xmage.de/xmage/config.json | jq '.XMage.location' | xargs curl -# -L > xmage.zip \
  && unzip xmage.zip -x "mage-client*" \
  && rm xmage.zip \
- && apk del curl jq #redo
+ && apk del curl jq
 
 COPY dockerStartServer.sh /xmage/mage-server/
 
