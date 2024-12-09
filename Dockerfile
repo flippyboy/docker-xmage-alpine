@@ -1,5 +1,5 @@
 # Using pre-built alpine with server jre
-FROM flippyboy/alpine-java:8u201b09-jre
+FROM anapsix/alpine-java:8u201b09_server-jre_unlimited
 
 # XMage settings
 
