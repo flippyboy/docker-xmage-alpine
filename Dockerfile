@@ -24,7 +24,7 @@ RUN set -ex && \
 
 WORKDIR /xmage
 
-RUN curl --silent --show-error http://xmage.de/xmage/config.json | jq '.XMage.location' | xargs curl -# -L > xmage.zip \
+RUN curl --silent --show-error https://xmage.today/config.json | jq '.XMage.location' | xargs curl -# -L > xmage.zip \
  && unzip xmage.zip -x "mage-client*" \
  && rm xmage.zip \
  && apk del curl jq
